@@ -10,16 +10,42 @@
         body {
             background-color: bisque; /* Cambia el valor hexadecimal a tu color deseado */
         }
+        h1 {
+            text-align: center;
+        }
+        nav{
+            border: 1px solid #333; /* Cambia el valor hexadecimal a tu color deseado */
+            padding: 10px; /* Agrega relleno alrededor del texto */
+            text-align: center;
+        }
         .centrar-imagen {
             display: block;
             margin: 0 auto;
             width: auto;
             height: 100px;
         }
+        .centrar-img {
+            display: block;
+            margin: 0 auto;
+            width: auto;
+            height: 50px;
+        }
+        .centrar-nosotros {
+            display: block;
+            margin: 0 auto;
+            width: auto;
+            height: 50px;
+        }
+        .centrar-contacto {
+            display: block;
+            margin: 0 auto;
+            width: auto;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
-<img src="logo.png" alt="logo" class="centrar-imagen">>
+<img src="logo.png" alt="logo" class="centrar-imagen">
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Cursos</a>
@@ -46,7 +72,7 @@
 
 <!-- Home Section -->
 <section id="home">
-    <h1>Welcome to our Course Management System</h1>
+    <h1 style="position: center;">Welcome to our Course Management System</h1>
     <!-- Add content for the home section -->
 </section>
 
@@ -59,7 +85,9 @@
         MEMBERS: Oscar Alejandro Santillan Gonzalez,
          Ramon Cardenas Gutierrez,
           Eimer Alejandro Ruiz Perez,
-           Jose Vicente Diaz Sunday</p>
+           Jose Vicente Diaz Sunday, We are providing a service that can facilitate the organization of learning
+        </p>   
+        <img src="nosotros.png" alt="nosotros" class="centrar-nosotros"> 
     <!-- Add content for the About Us section -->
 </section>
 
@@ -69,7 +97,11 @@
     <p>INCOME FLOW
         SPEI payment method
         PAYPAL
-        Economical costs, fits your budget</p>
+        Economical costs, fits your budget, These are some payment methods, you can start a free month,
+         then pay for a membership to the course you want, 
+         purchase it from $1</p>
+         <button>Seleccionar metodo de pago</button>
+         <img src="metodo.png" alt="metodopago" class="centrar-img">
     <!-- Add content for the Pricing/Plans section -->
 </section>
 
@@ -83,6 +115,8 @@
         Customer Support
         Support and user guide
         Provide legal certifications</p>
+        
+<img src="contacto.png" alt="contacto" class="centrar-contacto">
     <!-- Add contact form or information here -->
 </section>
 
