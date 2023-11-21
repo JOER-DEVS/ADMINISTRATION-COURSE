@@ -89,6 +89,22 @@
       max-width: 400px;
       margin: 20px auto;
     }
+    #container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 800px;
+            width: 100%;
+        }
+    #formulario-pago {
+      width: 45%;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+    }
+    #registro-pago {
+            margin-top: 20px;
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
@@ -137,6 +153,7 @@
            Jose Vicente Diaz Sunday, We are providing a service that can facilitate the organization of learning
         </p>   
         <img src="nosotros.png" alt="nosotros" class="centrar-nosotros"> 
+        <br>
         <a href="Formulario.html">Registrer</a>
     <!-- Add content for the About Us section -->
 </section>
@@ -150,46 +167,57 @@
         Economical costs, fits your budget, These are some payment methods, you can start a free month,
          then pay for a membership to the course you want, 
          purchase it from $1</p>
-         <button class="centrar-pago" onclick="mostrarFormularioPago()">Select payment method</button>
+         <h1>Payment Form</h1>
 
-         <form id="formulario-pago" style="display: none;">
-            <label for="nombre-titular">Name of holder:</label>
-            <input type="text" id="nombre-titular" required>
-          
-            <label for="numero-tarjeta">Card number:</label>
-            <input type="text" id="numero-tarjeta" required>
-          
-            <label for="fecha-expiracion">Expiration date:</label>
-            <input type="text" id="fecha-expiracion" placeholder="MM/YY" required>
-          
-            <label for="codigo-seguridad">security-code:</label>
-            <input type="text" id="codigo-seguridad" required>
-          
-            <button type="button" onclick="procesarPago()">Pay</button>
-          </form>
+    <button onclick="mostrarFormularioPago()">Enter Payment Details</button>
+    <form id="formulario-pago" id="container" style="display: none;" onsubmit="procesarPago(); return false;">
+        <label for="nombre-titular">Name of owner:</label>
+        <input type="text" id="nombre-titular" required><br>
+        <br>
+
+        <label for="numero-tarjeta">Number Card:</label>
+        <input type="text" id="numero-tarjeta" required><br>
+        <br>
+        <label for="fecha-expiracion">Date expiration:</label>
+        <input type="text" id="fecha-expiracion" required><br>
+        <br>
+        <label for="codigo-seguridad">Códe security:</label>
+        <input type="text" id="codigo-seguridad" required>
+        <br>
+        <br>
+        <button type="submit">Process Payment</button>
+    </form>
+
+    <!-- Área para mostrar la información del pago -->
+    <div id="registro-pago"></div>
           
           <script>
             function mostrarFormularioPago() {
-              document.getElementById('formulario-pago').style.display = 'block';
+                document.getElementById('formulario-pago').style.display = 'block';
             }
-          
+    
             function procesarPago() {
-              // Aquí puedes agregar la lógica para procesar el pago
-              var nombreTitular = document.getElementById('nombre-titular').value;
-              var numeroTarjeta = document.getElementById('numero-tarjeta').value;
-              var fechaExpiracion = document.getElementById('fecha-expiracion').value;
-              var codigoSeguridad = document.getElementById('codigo-seguridad').value;
-          
-              // Ejemplo: Mostrar la información del pago en la consola
-              console.log("Nombre del titular: " + nombreTitular);
-              console.log("Número de tarjeta: " + numeroTarjeta);
-              console.log("Fecha de expiración: " + fechaExpiracion);
-              console.log("Código de seguridad: " + codigoSeguridad);
-          
-              // Aquí podrías enviar la información del pago a tu servidor para procesarlo
-              // o realizar otras acciones según tus necesidades.
+                var nombreTitular = document.getElementById('nombre-titular').value;
+                var numeroTarjeta = document.getElementById('numero-tarjeta').value;
+                var fechaExpiracion = document.getElementById('fecha-expiracion').value;
+                var codigoSeguridad = document.getElementById('codigo-seguridad').value;
+    
+                // Crear un nuevo elemento para mostrar la información del pago
+                var registroPagoDiv = document.getElementById('registro-pago');
+                var nuevoRegistroPago = document.createElement('div');
+                nuevoRegistroPago.innerHTML = '<strong>Nombre del Titular:</strong> ' + nombreTitular +
+                    '<br><strong>Número de Tarjeta:</strong> ' + numeroTarjeta +
+                    '<br><strong>Fecha de Expiración:</strong> ' + fechaExpiracion +
+                    '<br><strong>Código de Seguridad:</strong> ' + codigoSeguridad +
+                    '<hr>';
+    
+                // Agregar el nuevo elemento al área de registro de pagos
+                registroPagoDiv.appendChild(nuevoRegistroPago);
+    
+                // Limpiar el formulario de pago
+                document.getElementById('formulario-pago').reset();
             }
-          </script>
+        </script>
          <img src="metodo.png" alt="metodopago" class="centrar-img">
     <!-- Add content for the Pricing/Plans section -->
 </section>
@@ -207,9 +235,9 @@
         
 <img src="contacto.png" alt="contacto" class="centrar-contacto">
 <br>
-<img src="whatsapp.png" alt="whatsapp" class="right-whatsapp"> <a href="https://wa.me/1234567890">WhatsApp</a>
+<img src="whatsapp.png" alt="whatsapp" class="right-whatsapp"> <a href="https://wa.me/8125834011">WhatsApp</a>
 
-<img src="facebook.png" alt="facebook" class="right-facebook">  <a href="https://www.facebook.com/TuPaginaDeFacebook" target="_blank">Nuestra Página de Facebook</a>
+<img src="facebook.png" alt="facebook" class="right-facebook">  <a href="https://www.facebook.com/oscar.santillan.102361" target="_blank">Nuestra Página de Facebook</a>
 
 
     <!-- Add contact form or information here -->
